@@ -6,11 +6,12 @@ import cookieParser from "cookie-parser";
 import { errorMiddleware } from "./middlewares/error.js";
 import cors from "cors";
 
+export const app = express();
+
 config({
     path: "./data/config.env",
 });
 
-export const app = express();
 app.use(express.json()); //use it before router
 app.use(cookieParser());
 app.use(cors({
